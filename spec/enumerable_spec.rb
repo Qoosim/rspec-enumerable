@@ -65,4 +65,29 @@ RSpec.describe Enumerable do
     end
   end
 
+  describe '#my_count' do
+    it 'returns the number of elements yielding a true value' do
+      expect([1, 2, 3, 4, 5].my_count(&:even?)).to eql(2)
+    end
+    # it 'returns the number of elements in array' do
+    #   expect(expect([1, 2, 3, 4, 5, 3].my_count(3)).to eql(2)
+    # end
+  end
+
+  describe '#my_map' do
+    it 'returns new array with the results of running block once for every elements in the array' do
+      [1, 2, 3, 4].my_map { |x| arr << x * x }
+      expect(arr).to eql([1, 4, 9, 16])
+    end
+    it 'returns Enumerator when no block is given' do
+      expect([1, 2, 3, 4].my_map).to be_a(Enumerator)
+    end
+  end
+
+  describe '#my_inject' do
+    it 'returns combined elements of array by applying binary operation specified by block' do
+      expect([4, 5, 6, 7, 8, 9, 10].my_inject(0) { |sum, x| sum + x }).to eql(49)
+    end
+  end
+
 end
