@@ -42,7 +42,7 @@ RSpec.describe Enumerable do
     it 'returns true if the block never returns false or nil' do
       expect(%w[ant ball cat dog ram].my_all? { |item| item.size >= 3 }).to eql(true)
     end
-    it 'returns Enumerator if no block is given' do
+    it 'returns true if no block is given' do
       expect(%w[ant ball cat dog ram].my_all?).to eql(true)
     end
   end
@@ -55,5 +55,14 @@ RSpec.describe Enumerable do
       expect(%w[goat chair paper mouse house].my_any?).to eql(true)
     end
   end
-  
+
+  describe '#my_none?' do
+    it 'returns true if the block never returns true for all the element of the array' do
+      expect([2, 4, 6, 8, 10].my_none?(&:odd?)).to eql(true)
+    end
+    it 'returns true only if none of the collection members is true when no block is given' do
+      expect([2, 4, 6, 8, 10].my_none?).to eql(false)
+    end
+  end
+
 end
