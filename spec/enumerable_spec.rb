@@ -10,8 +10,7 @@ RSpec.describe Enumerable do
     end
 
     it 'returns enumerator if no block is given' do
-      arr_block = [1, 2, 3, 4, 5]
-      expect(arr_block.my_each).to be_a(Enumerator)
+      expect([1, 2, 3, 4, 5].my_each).to be_a(Enumerator)
     end
   end
 
