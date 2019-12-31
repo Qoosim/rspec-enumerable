@@ -46,4 +46,14 @@ RSpec.describe Enumerable do
       expect(%w[ant ball cat dog ram].my_all?).to eql(true)
     end
   end
+
+  describe '#my_any?' do
+    it 'return true if the block ever returns a value other than false or nit' do
+      expect(%w[goat chair paper mouse house].my_any? { |item| item.size >= 4 }).to eql(true)
+    end
+    it 'returns true when no block is given' do
+      expect(%w[goat chair paper mouse house].my_any?).to eql(true)
+    end
+  end
+  
 end
