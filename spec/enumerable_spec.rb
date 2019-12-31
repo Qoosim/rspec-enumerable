@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require '../lib/enumerables.rb'
+require './lib/enumerables.rb'
 RSpec.describe Enumerable do
   let(:arr) { [] }
 
@@ -10,7 +10,8 @@ RSpec.describe Enumerable do
     end
 
     it 'returns enumerator if no block is given' do
-      expect([1, 2, 3, 4, 5].my_each { }).to eql()
+      arr_block = [1, 2, 3, 4, 5]
+      expect(arr_block.my_each).to be_a(Enumerator)
     end
   end
 
