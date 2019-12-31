@@ -69,9 +69,12 @@ RSpec.describe Enumerable do
     it 'returns the number of elements yielding a true value' do
       expect([1, 2, 3, 4, 5].my_count(&:even?)).to eql(2)
     end
-    # it 'returns the number of elements in array' do
-    #   expect(expect([1, 2, 3, 4, 5, 3].my_count(3)).to eql(2)
-    # end
+    it 'returns the number of time the argument given occurs in array' do
+      expect([1, 2, 3, 4, 5, 3].my_count(3)).to eql(2)
+    end
+    it 'returns the number of elements in array' do
+      expect([1, 2, 3, 4, 5].my_count).to eql(5)
+    end
   end
 
   describe '#my_map' do
