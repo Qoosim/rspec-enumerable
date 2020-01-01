@@ -16,6 +16,6 @@
 ### Built with
 * Ruby
 * RSpec
-### Author: Qoosim AbdulGhaniyy Adekunle && Tashfeen Rao
+#### Collaborators: Qoosim AbdulGhaniyy Adekunle && Tashfeen Rao
 * Github: [Qoosim](https://github.com/Qoosim)
 * Github: [Tashfeen](https://github.com/TashfeenRao)
